@@ -1,0 +1,76 @@
+@import './variable.scss';
+
+$nav-height: 60px;
+$side-width: 260px;
+
+.main {
+  padding-top: $nav-height;
+  height: calc(100% - 60px);
+  overflow-y: hidden;
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $nav-height;
+  box-sizing: border-box;
+  border-bottom: 1px solid $border-color;
+
+  .nav {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    list-style: none;
+    padding-right: 46px;
+    user-select: none;
+
+    .item {
+      display: inline-block;
+      margin-right: 32px;
+      padding: 0 4px;
+      line-height: $nav-height;
+      cursor: pointer;
+
+      &:hover{
+        color: $active-color;
+      }
+     }
+
+    .actived {
+      color: $active-color;
+      box-sizing: border-box;
+      border-bottom: 2px solid $active-color;
+    }  
+  }
+}
+
+.left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding-top: $nav-height;
+  width: $side-width;
+  box-sizing: border-box;
+
+  .side {
+    padding: 32px 20px;
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    border-right: 1px solid $border-color;
+
+    .item {
+      padding: 24px 0;
+      cursor: pointer;
+    }
+
+    .actived {
+      color: $active-color;
+    } 
+  }
+}
+
+.right {
+  padding-left: $side-width;
+}
